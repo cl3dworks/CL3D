@@ -388,7 +388,7 @@ body.workspace-locked {
     top: auto;
     bottom: 0;
     backdrop-filter: blur(10px);
-    pointer-events: auto;
+    pointer-events: none;
 }
 
 #cinematic-footer {

@@ -167,63 +167,58 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Image Expand Galleries
-const lightbox = document.getElementById('gallery-lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.lightbox-close');
+    const lightbox = document.getElementById('gallery-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
 
-document.querySelectorAll('.project-gallery').forEach(grid => {
-    const hiddenCount = grid.querySelectorAll('.hidden-asset').length;
-    const counterCard = grid.querySelector('.counter-card');
-    if (counterCard && hiddenCount > 0) {
-        counterCard.setAttribute('data-plus-count', `+${hiddenCount}`);
-    }
-});
-
-document.querySelectorAll('.gallery-card').forEach(card => {
-    card.addEventListener('click', (e) => {
-        const galleryGrid = card.closest('.project-gallery');
-        if (!galleryGrid) return; // Safety check
-
-        // BLOCK 1: Logic specifically for the Counter Card (+ X more / Minimize)
-        if (card.classList.contains('counter-card')) {
-            
-            if (!galleryGrid.classList.contains('expanded')) {
-                // If collapsed: expand it
-                galleryGrid.classList.add('expanded');
-            } else {
-                // If already expanded: check if they clicked the bottom "minimize" area
-                const rect = card.getBoundingClientRect();
-                const clickY = e.clientY - rect.top; 
-                
-                if (clickY >= (rect.height - 45)) {
-                    galleryGrid.classList.remove('expanded');
-                }
-            }
-            
-            // CRITICAL: Stop here so the counter card NEVER tries to open a lightbox
-            return; 
-        } 
-        
-        // BLOCK 2: Logic for regular image cards
-        // Clicking a regular image should ALWAYS open the lightbox, 
-        // regardless of whether the gallery grid is expanded or not.
-        if (lightbox && lightboxImg) {
-            const internalImg = card.querySelector('img');
-            if (internalImg) {
-                lightboxImg.src = internalImg.src;
-                lightbox.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            }
+    document.querySelectorAll('.project-gallery').forEach(grid => {
+        const hiddenCount = grid.querySelectorAll('.hidden-asset').length;
+        const counterCard = grid.querySelector('.counter-card');
+        if (counterCard && hiddenCount > 0) {
+            counterCard.setAttribute('data-plus-count', `+${hiddenCount}`);
         }
     });
-});
 
-if (closeBtn && lightbox) {
-    closeBtn.addEventListener('click', () => {
-        lightbox.style.display = 'none';
-        document.body.style.overflow = 'auto';
+    document.querySelectorAll('.gallery-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            const galleryGrid = card.closest('.project-gallery');
+            if (!galleryGrid) return; 
+            const actualCounterCard = e.target.closest('.counter-card');
+
+            if (actualCounterCard) {
+                
+                if (!galleryGrid.classList.contains('expanded')) {
+                    galleryGrid.classList.add('expanded');
+                    return;
+                } else {
+                    const rect = actualCounterCard.getBoundingClientRect();
+                    const clickY = e.clientY - rect.top; 
+                    
+                    if (clickY >= (rect.height - 45)) {
+                        galleryGrid.classList.remove('expanded');
+                        return;
+                    }
+                }
+                 
+            } 
+            
+            if (lightbox && lightboxImg) {
+                const internalImg = card.querySelector('img');
+                if (internalImg) {
+                    lightboxImg.src = internalImg.src;
+                    lightbox.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+        });
     });
-}
+
+    if (closeBtn && lightbox) {
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
 
     // Variant Controls (Day/Night Variant buttons)
     const buttons = document.querySelectorAll('#project-car .variant-btn');
