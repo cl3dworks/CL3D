@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Trigger the real-time progressive loader using the exact asset path
-    preloadHeroVideoAsset("/static/COFFEE_optimized.mp4");
+    preloadHeroVideoAsset("static/COFFEE_optimized.mp4");
 
 
     const landingHero = document.getElementById('landing-hero');

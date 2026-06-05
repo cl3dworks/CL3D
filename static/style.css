@@ -349,9 +349,11 @@ body.workspace-locked {
 .main-content {
     flex: 1;
     padding: 40px 24px;
-    max-width: 100%;
+    max-width: calc(100% - 290px); 
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
 }
-
 
 .video-container {
     position: relative; width: 100%; max-width: 1280px; height:auto; margin: 20px auto;
