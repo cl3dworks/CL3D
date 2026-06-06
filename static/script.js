@@ -140,19 +140,79 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //
     
-    // Portfolio Video Autoplay Loops
+    // ==========================================
+    // PORTFOLIO GRID VIDEO LOOPS (SINGLE PLAY FIX)
+    // ==========================================
     document.querySelectorAll('.video-container').forEach((container) => {
         const video = container.querySelector('.video-3d');
         if (!video) return;
 
-        video.addEventListener('loadedmetadata', () => {
-            video.loop = true;
-            video.play().catch(() => {});
-        });
-        if (video.readyState >= 1) {
-            video.loop = true;
-            video.play().catch(() => {});
+        const isMobile = () => window.innerWidth <= 768;
+
+        function configureVideoBehavior() {
+            if (isMobile()) {
+                // Mobile Configuration: Stop background looping data drain
+                video.loop = false;
+                video.autoplay = false;
+                video.removeAttribute('autoplay');
+                video.removeAttribute('loop');
+                
+                // Allow audio on mobile since it is click-to-play
+                video.muted = false;
+                video.removeAttribute('muted');
+                
+                // Show standard native browser controls
+                video.setAttribute('controls', '');
+                video.controls = true;
+                
+                // Restrict heavy downloading buffers on mobile grids
+                video.setAttribute('preload', 'metadata');
+                video.preload = "metadata";
+            } else {
+                // Desktop Configuration stays strictly muted for silent autoplay looping
+                video.loop = true;
+                video.muted = true;
+                video.setAttribute('muted', ''); 
+                video.removeAttribute('controls');
+                video.controls = false;
+                video.setAttribute('preload', 'auto');
+                video.preload = "auto";
+                video.play().catch(() => {});
+            }
         }
+
+        // Initialize setup logic safely
+        configureVideoBehavior();
+
+        // SINGLE PLAY CONFLICT RESOLUTION (Mobile Only)
+        // Listen for the exact millisecond this specific video starts playing
+        video.addEventListener('play', () => {
+            if (!isMobile()) return;
+
+            // Find all other portfolio videos on the page
+            document.querySelectorAll('.video-3d').forEach((otherVideo) => {
+                // If it's a different video and it's currently playing, pause it!
+                if (otherVideo !== video && !otherVideo.paused) {
+                    otherVideo.pause();
+                }
+            });
+        });
+
+        // Let native controls handle clicks on mobile touch frames safely
+        container.addEventListener('click', (e) => {
+            if (!isMobile()) return;
+            // Stop any parent elements or outer layout listeners from stealing the touch
+            e.stopPropagation();
+        });
+
+        // Safe tracking to ensure device orientation flips adapt properly
+        let lastWidth = window.innerWidth;
+        window.addEventListener('resize', () => {
+            if (window.innerWidth !== lastWidth) {
+                lastWidth = window.innerWidth;
+                configureVideoBehavior();
+            }
+        }, { passive: true });
     });
 
     // Accordion Dropdowns
@@ -166,11 +226,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Image Expand Galleries
+    // ==========================================
+    // IMAGE EXPAND GALLERIES (DESKTOP KEYBOARD & MOBILE SWIPE/TAP)
+    // ==========================================
     const lightbox = document.getElementById('gallery-lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.querySelector('.lightbox-close');
 
+    // Tracking anchors
+    let currentActiveCard = null;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const navHint = document.querySelector('.lightbox-nav-hint');
+    
     document.querySelectorAll('.project-gallery').forEach(grid => {
         const hiddenCount = grid.querySelectorAll('.hidden-asset').length;
         const counterCard = grid.querySelector('.counter-card');
@@ -179,6 +247,53 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    if (lightboxImg) {
+        lightboxImg.addEventListener('load', () => {
+            if (navHint) {
+                navHint.classList.remove('load-failed');
+            }
+        });
+        lightboxImg.addEventListener('error', () => {
+            console.error("[Lightbox Engine] Targeted asset failed to load via lazy pipeline.");
+            if (navHint) {
+                navHint.classList.add('load-failed');
+            }
+        });
+    }
+
+    // Unified lazy-loading navigation handler
+    function changeLightboxImage(cardElement) {
+        if (!cardElement || !lightboxImg) return;
+        
+        const internalImg = cardElement.querySelector('img');
+        if (internalImg) {
+            currentActiveCard = cardElement;
+            
+            // Wipe out memory trail to prevent frame flashes
+            lightboxImg.removeAttribute('src'); 
+            
+            // Progressive string load on-demand
+            lightboxImg.src = internalImg.src;
+        }
+    }
+
+    function navigateGallery(direction) {
+        if (!currentActiveCard) return;
+        
+        let targetCard = null;
+        if (direction === 'prev') {
+            targetCard = currentActiveCard.previousElementSibling;
+        } else if (direction === 'next') {
+            targetCard = currentActiveCard.nextElementSibling;
+        }
+
+        // Validate that the target sibling is indeed a gallery image card
+        if (targetCard && targetCard.classList.contains('gallery-card')) {
+            changeLightboxImage(targetCard);
+        }
+    }
+
+    // Open lightbox via card clicks
     document.querySelectorAll('.gallery-card').forEach(card => {
         card.addEventListener('click', (e) => {
             const galleryGrid = card.closest('.project-gallery');
@@ -186,38 +301,72 @@ document.addEventListener("DOMContentLoaded", () => {
             const actualCounterCard = e.target.closest('.counter-card');
 
             if (actualCounterCard) {
-                
                 if (!galleryGrid.classList.contains('expanded')) {
                     galleryGrid.classList.add('expanded');
                     return;
                 } else {
                     const rect = actualCounterCard.getBoundingClientRect();
                     const clickY = e.clientY - rect.top; 
-                    
                     if (clickY >= (rect.height - 45)) {
                         galleryGrid.classList.remove('expanded');
                         return;
                     }
                 }
-                 
             } 
             
             if (lightbox && lightboxImg) {
-                const internalImg = card.querySelector('img');
-                if (internalImg) {
-                    lightboxImg.src = internalImg.src;
-                    lightbox.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                }
+                changeLightboxImage(card);
+                lightbox.style.display = 'block';
+                document.body.style.overflow = 'hidden';
             }
         });
     });
 
-    if (closeBtn && lightbox) {
-        closeBtn.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
+    function closeLightbox() {
+        if (lightbox) lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        currentActiveCard = null;
+        if (navHint) navHint.classList.remove('load-failed');
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+
+
+    // --- 1. DESKTOP KEYBOARD TRACKING ---
+    document.addEventListener('keydown', (e) => {
+        if (!currentActiveCard || !lightbox || lightbox.style.display !== 'block') return;
+
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navigateGallery('prev');
+        if (e.key === 'ArrowRight') navigateGallery('next');
+    });
+
+
+    // --- 2. MOBILE SWIPE INTERACTION ENGINE ---
+    if (lightbox) {
+        lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        lightbox.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipeGesture();
+        }, { passive: true });
+    }
+
+    function handleSwipeGesture() {
+        const swipeThreshold = 50; // Minimum drag pixels required to declare a swipe
+        const diffX = touchEndX - touchStartX;
+
+        if (Math.abs(diffX) < swipeThreshold) return;
+
+        if (diffX > 0) {
+            // Dragged Right -> View Previous Image
+            navigateGallery('prev');
+        } else {
+            // Dragged Left -> View Next Image
+            navigateGallery('next');
+        }
     }
 
     // Variant Controls (Day/Night Variant buttons)

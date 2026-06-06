@@ -1,660 +1,622 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
-    <link rel="icon" type="image/png" href="static/CLLOGO_transparent.png">
-    <title>CL3D Works</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;800&display=swap" rel="stylesheet">
-    <link href="static/style.css" rel="stylesheet">
-    <script src="static/script.js"defer></script>
-</head>
-<body>
-    <div id="portfolio-cinematic-loader">
-        <div class="loader-branding-frame">
-            <h2 class="loader-brand-title">CL3D</h2>
-            <p class="loader-brand-subtitle">INITIALIZING WORKSPACE</p>
-            
-            <div class="progress-bar-track">
-                <div id="loader-progress-fill"></div>
-            </div>
-            
-            <div class="loader-status-metrics">
-                <span id="loader-percentage-counter">0%</span>
-            </div>
-        </div>
-    </div>
-    <section id="landing-hero">
-        <div class="landing-sticky-frame">
-            <video id="hero-scrub-video" src="static/COFFEE_optimized.mp4" preload="auto" muted playsinline></video>
-            <div class="landing-titles">
-                <h1>CL3D</h1>
-                <p>Take a quick scroll through the workspace to see my works</p>
-                <div class="scroll-arrow">↓</div>
+    <head>
+        <meta charset="utf-8">
+        <meta content="initial-scale=1, width=device-width" name="viewport">
+        <link href="static/CLLOGO_transparent.png" rel="icon" type="image/png">
+        <title>CL3D Works</title>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;800&display=swap" rel="stylesheet">
+        <link href="static/style.css" rel="stylesheet">
+        <script defer src="static/script.js"></script>
+    </head>
+    <body>
+        <div id="portfolio-cinematic-loader">
+            <div class="loader-branding-frame">
+                <h2 class="loader-brand-title">CL3D</h2>
+                <p class="loader-brand-subtitle">INITIALIZING WORKSPACE</p>
+                <div class="progress-bar-track">
+                    <div id="loader-progress-fill"></div>
+                </div>
+                <div class="loader-status-metrics">
+                    <span id="loader-percentage-counter">0%</span>
+                </div>
             </div>
         </div>
-    </section>
 
-    <div id="portfolio-workspace" class="app-container">
-
-        <button id="mobile-sidebar-toggle" aria-label="Toggle navigation menu">
-            <span class="burger-bar"></span>
-            <span class="burger-bar"></span>
-            <span class="burger-bar"></span>
-        </button>
-        
-        <aside class="sidebar structural-hidden">
-            <div class="sidebar-brand">
-                <img id="logo" src="static/CLLOGO_transparent.png" alt="CL3D Logo">
+        <section id="landing-hero">
+            <div class="landing-sticky-frame">
+                <video id="hero-scrub-video" muted playsinline preload="auto" src="static/COFFEE_optimized.mp4"></video>
+                <div class="landing-titles">
+                    <h1>CL3D</h1>
+                    <p>Take a quick scroll through the workspace to see my works</p>
+                    <div class="scroll-arrow">&darr;</div>
+                </div>
             </div>
-            
-            <nav class="sidebar-menu">
-                <div class="sidebar-about">
-                    <strong class="about-name">Christopher Lim</strong><br>
-                    <span class="about-title">3D/2D Artist</span><br>
-                    <span class="about-loc">📍 Philippines</span><br>
-                    <span class="about-desc">
-                        Specializing in 3D modeling, texturing, and rendering, alongside 2D character design, environment illustration, and concept art.
-                    </span>
-                </div>
+        </section>
 
-                <div class="menu-section-header">
-                    <h3>PROJECTS</h3>
+        <div class="app-container" id="portfolio-workspace">
+            <button aria-label="Toggle navigation menu" id="mobile-sidebar-toggle">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+            <aside class="sidebar structural-hidden">
+                <div class="sidebar-brand">
+                    <img alt="CL3D Logo" id="logo" src="static/CLLOGO_transparent.png">
                 </div>
-
-                <ul class="menu-root">                       
-                    <li class="category-group">
-                        <button class="category-trigger">Hard-Surface Modeling</button>
-                        <ul class="category-submenu">
-                            <li><a href="#project-monitor" class="active">Dual Monitor Mount</a></li>
-                            <li><a href="#project-watch">Sports Watch</a></li>
-                            <li><a href="#project-mic">Shotgun Microphone</a></li>
-                            <li><a href="#project-headphones">Headphones</a></li>                            
-                            <li><a href="#project-jeep">Philippine Jeepney</a></li>
-                            <li><a href="#project-fan">Worn-out Fan</a></li>
-                            <li><a href="#project-bike">Rusty Bike</a></li>
-                        </ul>
-                    </li>
-                    <li class="category-group">
-                        <button class="category-trigger">Cosmetics</button>
-                        <ul class="category-submenu">
-                            <li><a href="#project-emerald">Emerald Set Mock-up</a></li>
-                            <li><a href="#project-ivory">Ivory Set Mock-up</a></li>
-                            <li><a href="#project-ocean">Ocean Set Mock-up</a></li>
-                            <li><a href="#project-rose">Rose Set Mock-up</a></li>
-                            <li><a href="#project-perfume">Perfume Mock-up</a></li>
-                        </ul>
-                    </li>
-                    <li class="category-group">
-                        <button class="category-trigger">Organic & Culinary</button>
-                        <ul class="category-submenu">
-                            <li><a href="#project-coffee">Cinematic Coffee Bean</a></li>
-                            <li><a href="#project-pizza">Pizza</a></li>
-                            <li><a href="#project-bev">Beverage</a></li>
-                        </ul>
-                    </li>
-                    <li class="category-group">
-                        <button class="category-trigger">Environment</button>
-                        <ul class="category-submenu">
-                            <li><a href="#project-mountain">Mountain Landscape</a></li>
-                            <li><a href="#project-eerie">Eerie Hallway</a></li>
-                            <li><a href="#project-found">Found Footage</a></li>
-                            <li><a href="#project-snowy">Snowy Environment</a></li>
-                            <li><a href="#project-school">Anime Artstyle School Ground</a></li>
-                        </ul>
-                    </li>
-                    <li class="category-group">
-                        <button class="category-trigger">Low Poly</button>
-                        <ul class="category-submenu">
-                            <li><a href="#project-car">Car Cruising</a></li>
-                            <li><a href="#project-lowPolyHut">Fish Hut</a></li>
-                            <li><a href="#project-truck">Desert Truck</a></li>
-                        </ul>
-                    </li>
-                    <li class="category-group">
-                        <button class="category-trigger">Others</button>
-                        <ul class="category-submenu">
-                            <li><a href="#others-slum">Slums</a></li>
-                            <li><a href="#others-bloodstream">Bloodstream</a></li>
-                            <li><a href="#others-bike">2D Bike</a></li>
-                            <li><a href="#others-water">Water Animation</a></li>
-                            <li><a href="#others-burger">Burger</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-
-        <main class="main-content">
-            <section id="project-monitor" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/monitor/monitor_mount.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Dual Monitor Mount</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/monitor/A01_HUANUO.jpg"></div>
-                    <div class="gallery-card"><img src="static/monitor/A02_HUANUO.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/monitor/A03_HUANUO.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/monitor/A04_HUANUO.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/monitor/A05_HUANUO.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/monitor/A06_HUANUO.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/monitor/A07_HUANUO.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/monitor/A08_HUANUO.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/monitor/A09_HUANUO.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/monitor/A10_HUANUO.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/monitor/A11_HUANUO.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/monitor/A12_HUANUO.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/monitor/A13_HUANUO.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/monitor/A14_HUANUO.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/monitor/A15_HUANUO.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/monitor/A16_HUANUO.jpg"></div>
-                </div>
-            </section>
-            <section id="project-watch" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/watch/Watch_Video_Full0001-1080.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Sports Watch</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/watch/Watch_Mockup_09.jpg"></div>
-                    <div class="gallery-card"><img src="static/watch/Watch_Mockup_03.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/watch/Watch_Mockup_01.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/watch/Watch_Mockup_02.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/watch/Watch_Mockup_04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/watch/Watch_Mockup_05.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/watch/Watch_Mockup_06.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/watch/Watch_Mockup_07.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/watch/Watch_Mockup_08.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/watch/Watch_Mockup_10.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/watch/Watch_Mockup_11.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/watch/Watch_Mockup_12.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-mic" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/mic/Takstar_Vid_Compressed20001-1013.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Shotgun Microphone</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/mic/Takstar_Cycles_main1.jpg"></div>
-                    <div class="gallery-card"><img src="static/mic/Takstar_Cycles_main2.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/mic/Takstar_Cycles_main3.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/mic/Takstar_Cycles_main4.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/mic/Takstar_Cycles_main5.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/mic/Takstar_Cycles_main6.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/mic/Takstar_Secondary_01.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/mic/Takstar_Secondary_02.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/mic/Takstar_Secondary_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/mic/Takstar_Secondary_04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/mic/Takstar_Secondary_05.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/mic/Takstar_Secondary_06.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-headphones" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/headphones/Headphones_Video_Compressed10001-1081.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Headphones</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/headphones/Headphones_01.jpg"></div>
-                    <div class="gallery-card"><img src="static/headphones/Headphones_02.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/headphones/Headphones_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/headphones/Headphones_04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/headphones/Headphones_5x5_01.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/headphones/Headphones_5x5_02.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/headphones/Headphones_5x5_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/headphones/Headphones_5x5_04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/headphones/Headphones_5x5_05.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/headphones/Headphones_5x5_06.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/headphones/Headphones_5x5_07.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/headphones/Headphones_5x5_08.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/headphones/Headphones_Last01.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/headphones/Headphones_Last02.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-emerald" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/emerald/SOUND_EMERALD_VIDEO.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Jade</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/emerald/JADE_COMPRESSED_01.jpg"></div>
-                    <div class="gallery-card"><img src="static/emerald/JADE_COMPRESSED_02.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/emerald/JADE_COMPRESSED_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/emerald/JADE_COMPRESSED_04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/emerald/JADE_COMPRESSED_05.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/emerald/JADE_COMPRESSED_06.jpg"></div>
-                </div>
-            </section>
-            <section id="project-ivory" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/ivory/SOUND_IVORY_VIDEO_COMRESSED.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Ivory</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/ivory/IVORY_COMPRESSED_00.jpg"></div>
-                    <div class="gallery-card"><img src="static/ivory/IVORY_COMPRESSED_01.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/ivory/IVORY_COMPRESSED_02.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/ivory/IVORY_COMPRESSED_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/ivory/IVORY_COMPRESSED_04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/ivory/IVORY_COMPRESSED_05.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/ivory/IVORY_COMPRESSED_06.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/ivory/IVORY_COMPRESSED_07.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-ocean" class="content-body">
-                <div class="project-details">
-                    <h2 class="active-project-title">Ocean</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/ocean/OCEAN_01.jpg"></div>
-                    <div class="gallery-card"><img src="static/ocean/OCEAN_02.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/ocean/OCEAN_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/ocean/OCEAN_04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/ocean/OCEAN_05.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-rose" class="content-body">
-                <div class="project-details">
-                    <h2 class="active-project-title">Rose</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/rose/ROSE_COMPRESSED_01.jpg"></div>
-                    <div class="gallery-card"><img src="static/rose/ROSE_COMPRESSED_02.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/rose/ROSE_COMPRESSED_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/rose/ROSE_COMPRESSED_04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/rose/ROSE_COMPRESSED_05.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-perfume" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/perfume/PERFUME_VIDEO_COMPRESSED.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Perfume</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/perfume/perfume_01.jpg"></div>
-                    <div class="gallery-card"><img src="static/perfume/perfume_02.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/perfume/perfume_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/perfume/perfume_04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/perfume/perfume_05.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/perfume/perfume_06.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-coffee" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/coffee/coffeeVid.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Coffee Bean</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/coffee/Coffee_Cycles08.jpg"></div>
-                    <div class="gallery-card"><img src="static/coffee/Coffee_Cycles07.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/coffee/Coffee_04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/coffee/Coffee_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/coffee/Coffee_05.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/coffee/Coffee_Cycles06.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/coffee/Coffee_02.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/coffee/Coffee_01.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/coffee/Coffee_Cycles09.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/coffee/Coffee_Cycles10.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/coffee/Coffee_Cycles11.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/coffee/Coffee_Cycles12.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/coffee/Coffee_Cycles13.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/coffee/Coffee_Cycles14.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/coffee/Coffee_Cycles15.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/coffee/Coffee_Cycles16.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/coffee/Coffee_Cycles17.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/coffee/Coffee_Cycles18.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-pizza" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/pizza/PiZZA_Video_Compressed_FULL0001-0338.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Pizza</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/pizza/BOXPIZZA1.jpg"></div>
-                    <div class="gallery-card"><img src="static/pizza/BOXPIZZA2.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/pizza/BOXPIZZA3.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/pizza/BOXPIZZA4.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/pizza/BOXPIZZA5.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/pizza/BOXPIZZA6.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/pizza/BOXPIZZA7.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/pizza/BOXPIZZA8.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-bev" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/wine/WINE_Demo1_ChristopherLim.mp4" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Beverage</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/wine/WINE_01.jpg"></div>
-                    <div class="gallery-card"><img src="static/wine/WINE_02.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/wine/WINE_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/wine/WINE_04.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-jeep" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/jeep/Jeepney_Video_Compressed10001-1440.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Philippine Jeepney</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/jeep/01_JEEPNEY_COMPRESSED_MAIN.jpg"></div>
-                    <div class="gallery-card"><img src="static/jeep/02_JEEPNEY_COMPRESSED_MAIN.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/jeep/03_JEEPNEY_COMPRESSED_MAIN.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/04_JEEPNEY_COMPRESSED_MAIN.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/05_JEEPNEY_COMPRESSED_MAIN.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/06_JEEPNEY_COMPRESSED_MAIN.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/JEEP_EXTERIOR_01.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/JEEP_EXTERIOR_02.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/JEEP_EXTERIOR_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/JEEP_EXTERIOR_04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/JEEP_EXTERIOR_05.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/JEEP_EXTERIOR_06.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/JEEP_WIP1.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/JEEP_WIP2.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/JEEP_WIP3.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/JEEP_WIP4.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/Square_01.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/Square_02.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/Square_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/Square_04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/Square_05.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/Square_06.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/Square_07.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/Square_08.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/Square_09.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/Square_10.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/Square_11.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/Square_12.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/WIP_GRID_01.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/WIP_GRID_02.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/jeep/WIP_GRID_03.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-fan" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/efan/EFAN_Video_Compressed0001-0405.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Worn-out Fan</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/efan/Electricfan_01.jpg"></div>
-                    <div class="gallery-card"><img src="static/efan/Electricfan_02.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/efan/Electricfan_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/efan/Electricfan_04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/efan/Electricfan_05.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/efan/Electricfan_06.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/efan/Electricfan_07.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/efan/Electricfan_08.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/efan/Electricfan_09.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/efan/Electricfan_10.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/efan/Electricfan_Square01.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/efan/Electricfan_Square02.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/efan/Electricfan_Square03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/efan/Electricfan_Square04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/efan/Electricfan_Square05.jpg"></div>
-                </div>
-            </section>
-            
-            <section id="project-bike" class="content-body">
-                <div class="project-details">
-                    <h2 class="active-project-title">Rusty Bike</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/bike/Bicycle_cycles00.jpg"></div>
-                    <div class="gallery-card"><img src="static/bike/Bicycle_cycles01.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/bike/Bicycle_cycles02.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/bike/Bicycle_cycles03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/bike/Bicycle_cycles04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/bike/Bicycle_cycles05.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/bike/Bicycle_cycles06.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/bike/Bicycle_cycles07.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/bike/Bicycle_cycles08.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-mountain" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/environment/video_LARGE_SCALE_LANDSCAPE0001-0374.webm"preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Mountain Landscape</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/environment/LARGE_SCALE_LANDSCAPE_COMPRESSED.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-eerie" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/horror_shorts/THE_HALLWAY0001-1190.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">The Hallway</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/horror_shorts/HALLWAY_01.jpg"></div>
-                    <div class="gallery-card"><img src="static/horror_shorts/HALLWAY_02.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/horror_shorts/HALLWAY_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/horror_shorts/HALLWAY_04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/horror_shorts/HALLWAY_05.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/horror_shorts/HALLWAY_06.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/horror_shorts/HALLWAY_07.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/horror_shorts/HALLWAY_08.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/horror_shorts/HALLWAY_09.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/horror_shorts/HALLWAY_10.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/horror_shorts/HALLWAY_11.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/horror_shorts/HALLWAY_12.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/horror_shorts/HALLWAY_13.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/horror_shorts/HALLWAY_14.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-found" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/horror_shorts/FOUND_FOOTAGE0001-1036.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Found Footage</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/horror_shorts/ANALOG_IMAGE_01.jpg"></div>
-                    <div class="gallery-card"><img src="static/horror_shorts/ANALOG_IMAGE_02.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/horror_shorts/ANALOG_IMAGE_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/horror_shorts/ANALOG_IMAGE_04.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-snowy" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/environment/ATLANTIC0001-0625.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Arctic Cel-shaded</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/environment/SNOWY_COMPRESSED.jpg"></div>
-                    <div class="gallery-card"><img src="static/environment/SNOWY_COMPRESSED2.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-school" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/environment/ANIMESTYLE_BACKGROUND0001-0888.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Anime Artstyle School Ground</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/environment/ANIME_BACKGROUND.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-car" class="content-body">
-                <div class="variant-panel active" id="panel-night">
+                <nav class="sidebar-menu">
+                    <div class="sidebar-about">
+                        <strong class="about-name">Christopher Lim</strong><br>
+                        <span class="about-title">3D/2D Artist</span><br>
+                        <span class="about-loc">📍 Philippines</span><br>
+                        <span class="about-desc">
+                            Specializing in 3D modeling, texturing, compositing and rendering, alongside 2D character design, environment illustration, and concept art.
+                        </span>
+                    </div>
+                    <div class="menu-section-header">
+                        <h3>PROJECTS</h3>
+                    </div>
+                    <ul class="menu-root">
+                        <li class="category-group">
+                            <button class="category-trigger">Hard-Surface Modeling</button>
+                            <ul class="category-submenu">
+                                <li><a href="#project-monitor">Dual Monitor Mount</a></li>
+                                <li><a href="#project-watch">Sports Watch</a></li>
+                                <li><a href="#project-mic">Shotgun Microphone</a></li>
+                                <li><a href="#project-headphones">Headphones</a></li>
+                                <li><a href="#project-jeep">Philippine Jeepney</a></li>
+                                <li><a href="#project-fan">Worn-out Fan</a></li>
+                                <li><a href="#project-bike">Rusty Bike</a></li>
+                            </ul>
+                        </li>
+                        <li class="category-group">
+                            <button class="category-trigger">Cosmetics</button>
+                            <ul class="category-submenu">
+                                <li><a href="#project-emerald">Emerald Set Mock-up</a></li>
+                                <li><a href="#project-ivory">Ivory Set Mock-up</a></li>
+                                <li><a href="#project-ocean">Ocean Set Mock-up</a></li>
+                                <li><a href="#project-rose">Rose Set Mock-up</a></li>
+                                <li><a href="#project-perfume">Perfume Mock-up</a></li>
+                            </ul>
+                        </li>
+                        <li class="category-group">
+                            <button class="category-trigger">Organic & Culinary</button>
+                            <ul class="category-submenu">
+                                <li><a href="#project-coffee">Cinematic Coffee Bean</a></li>
+                                <li><a href="#project-pizza">Pizza</a></li>
+                                <li><a href="#project-bev">Beverage</a></li>
+                            </ul>
+                        </li>
+                        <li class="category-group">
+                            <button class="category-trigger">Environment</button>
+                            <ul class="category-submenu">
+                                <li><a href="#project-mountain">Mountain Landscape</a></li>
+                                <li><a href="#project-eerie">Eerie Hallway</a></li>
+                                <li><a href="#project-found">Found Footage</a></li>
+                                <li><a href="#project-snowy">Snowy Environment</a></li>
+                                <li><a href="#project-school">Anime Artstyle School Ground</a></li>
+                            </ul>
+                        </li>
+                        <li class="category-group">
+                            <button class="category-trigger">Low Poly</button>
+                            <ul class="category-submenu">
+                                <li><a href="#project-car">Car Cruising</a></li>
+                                <li><a href="#project-lowPolyHut">Fish Hut</a></li>
+                                <li><a href="#project-truck">Desert Truck</a></li>
+                            </ul>
+                        </li>
+                        <li class="category-group">
+                            <button class="category-trigger">Others</button>
+                            <ul class="category-submenu">
+                                <li><a href="#others-slum">Slums</a></li>
+                                <li><a href="#others-bloodstream">Bloodstream</a></li>
+                                <li><a href="#others-bike">2D Bike</a></li>
+                                <li><a href="#others-water">Water Animation</a></li>
+                                <li><a href="#others-burger">Burger</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <main class="main-content">
+                <section class="content-body" id="project-monitor">
                     <div class="video-container">
-                        <video class="video-3d" src="static/lowpoly/LP_CAR_CRUISING_NIGHT0000-0312.webm" preload="auto" autoplay loop muted playsinline></video>
-                        <div class="variant-controls icon-overlay">
-                            <button class="variant-btn active" data-target="night" title="Night View">🌙</button>
-                            <button class="variant-btn" data-target="day" title="Day View">☀️</button>
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/monitor/monitor_mount.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Dual Monitor Mount</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/monitor/A01_HUANUO.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/monitor/A02_HUANUO.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/monitor/A03_HUANUO.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/monitor/A04_HUANUO.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/monitor/A05_HUANUO.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/monitor/A06_HUANUO.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/monitor/A07_HUANUO.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/monitor/A08_HUANUO.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/monitor/A09_HUANUO.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/monitor/A10_HUANUO.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/monitor/A11_HUANUO.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/monitor/A12_HUANUO.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/monitor/A13_HUANUO.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/monitor/A14_HUANUO.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/monitor/A15_HUANUO.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/monitor/A16_HUANUO.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-watch">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/watch/Watch_Video_Full0001-1080.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Sports Watch</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/watch/Watch_Mockup_09.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/watch/Watch_Mockup_03.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/watch/Watch_Mockup_01.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/watch/Watch_Mockup_02.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/watch/Watch_Mockup_04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/watch/Watch_Mockup_05.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/watch/Watch_Mockup_06.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/watch/Watch_Mockup_07.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/watch/Watch_Mockup_08.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/watch/Watch_Mockup_10.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/watch/Watch_Mockup_11.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/watch/Watch_Mockup_12.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-mic">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/mic/Takstar_Vid_Compressed20001-1013.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Shotgun Microphone</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/mic/Takstar_Cycles_main1.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/mic/Takstar_Cycles_main2.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/mic/Takstar_Cycles_main3.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/mic/Takstar_Cycles_main4.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/mic/Takstar_Cycles_main5.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/mic/Takstar_Cycles_main6.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/mic/Takstar_Secondary_01.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/mic/Takstar_Secondary_02.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/mic/Takstar_Secondary_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/mic/Takstar_Secondary_04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/mic/Takstar_Secondary_05.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/mic/Takstar_Secondary_06.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-headphones">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/headphones/Headphones_Video_Compressed10001-1081.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Headphones</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/headphones/Headphones_01.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/headphones/Headphones_02.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/headphones/Headphones_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/headphones/Headphones_04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/headphones/Headphones_5x5_01.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/headphones/Headphones_5x5_02.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/headphones/Headphones_5x5_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/headphones/Headphones_5x5_04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/headphones/Headphones_5x5_05.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/headphones/Headphones_5x5_06.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/headphones/Headphones_5x5_07.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/headphones/Headphones_5x5_08.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/headphones/Headphones_Last01.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/headphones/Headphones_Last02.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-emerald">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/emerald/SOUND_EMERALD_VIDEO.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Jade</h2>
+                    </div>
+                        <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/emerald/JADE_COMPRESSED_01.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/emerald/JADE_COMPRESSED_02.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/emerald/JADE_COMPRESSED_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/emerald/JADE_COMPRESSED_04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/emerald/JADE_COMPRESSED_05.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/emerald/JADE_COMPRESSED_06.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-ivory">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/ivory/SOUND_IVORY_VIDEO_COMRESSED.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Ivory</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/ivory/IVORY_COMPRESSED_00.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/ivory/IVORY_COMPRESSED_01.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/ivory/IVORY_COMPRESSED_02.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/ivory/IVORY_COMPRESSED_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/ivory/IVORY_COMPRESSED_04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/ivory/IVORY_COMPRESSED_05.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/ivory/IVORY_COMPRESSED_06.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/ivory/IVORY_COMPRESSED_07.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-ocean">
+                    <div class="project-details">
+                        <h2 class="active-project-title">Ocean</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/ocean/OCEAN_01.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/ocean/OCEAN_02.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/ocean/OCEAN_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/ocean/OCEAN_04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/ocean/OCEAN_05.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-rose">
+                    <div class="project-details">
+                        <h2 class="active-project-title">Rose</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/rose/ROSE_COMPRESSED_01.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/rose/ROSE_COMPRESSED_02.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/rose/ROSE_COMPRESSED_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/rose/ROSE_COMPRESSED_04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/rose/ROSE_COMPRESSED_05.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-perfume">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/perfume/PERFUME_VIDEO_COMPRESSED.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Perfume</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/perfume/perfume_01.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/perfume/perfume_02.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/perfume/perfume_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/perfume/perfume_04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/perfume/perfume_05.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/perfume/perfume_06.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-coffee">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/coffee/coffeeVid.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Coffee Bean</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/coffee/Coffee_Cycles08.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/coffee/Coffee_Cycles07.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/coffee/Coffee_04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/coffee/Coffee_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/coffee/Coffee_05.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/coffee/Coffee_Cycles06.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/coffee/Coffee_02.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/coffee/Coffee_01.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/coffee/Coffee_Cycles09.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/coffee/Coffee_Cycles10.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/coffee/Coffee_Cycles11.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/coffee/Coffee_Cycles12.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/coffee/Coffee_Cycles13.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/coffee/Coffee_Cycles14.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/coffee/Coffee_Cycles15.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/coffee/Coffee_Cycles16.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/coffee/Coffee_Cycles17.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/coffee/Coffee_Cycles18.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-pizza">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/pizza/PiZZA_Video_Compressed_FULL0001-0338.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Pizza</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/pizza/BOXPIZZA1.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/pizza/BOXPIZZA2.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/pizza/BOXPIZZA3.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/pizza/BOXPIZZA4.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/pizza/BOXPIZZA5.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/pizza/BOXPIZZA6.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/pizza/BOXPIZZA7.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/pizza/BOXPIZZA8.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-bev">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/wine/WINE_Demo1_ChristopherLim.mp4"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Beverage</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/wine/WINE_01.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/wine/WINE_02.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/wine/WINE_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/wine/WINE_04.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-jeep">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/jeep/Jeepney_Video_Compressed10001-1440.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Philippine Jeepney</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/jeep/01_JEEPNEY_COMPRESSED_MAIN.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/jeep/02_JEEPNEY_COMPRESSED_MAIN.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/jeep/03_JEEPNEY_COMPRESSED_MAIN.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/04_JEEPNEY_COMPRESSED_MAIN.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/05_JEEPNEY_COMPRESSED_MAIN.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/06_JEEPNEY_COMPRESSED_MAIN.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/JEEP_EXTERIOR_01.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/JEEP_EXTERIOR_02.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/JEEP_EXTERIOR_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/JEEP_EXTERIOR_04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/JEEP_EXTERIOR_05.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/JEEP_EXTERIOR_06.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/JEEP_WIP1.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/JEEP_WIP2.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/JEEP_WIP3.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/JEEP_WIP4.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/Square_01.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/Square_02.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/Square_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/Square_04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/Square_05.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/Square_06.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/Square_07.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/Square_08.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/Square_09.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/Square_10.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/Square_11.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/Square_12.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/WIP_GRID_01.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/WIP_GRID_02.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/jeep/WIP_GRID_03.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-fan">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/efan/EFAN_Video_Compressed0001-0405.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Worn-out Fan</h2>
+                    </div>
+                        <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/efan/Electricfan_01.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/efan/Electricfan_02.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/efan/Electricfan_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/efan/Electricfan_04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/efan/Electricfan_05.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/efan/Electricfan_06.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/efan/Electricfan_07.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/efan/Electricfan_08.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/efan/Electricfan_09.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/efan/Electricfan_10.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/efan/Electricfan_Square01.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/efan/Electricfan_Square02.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/efan/Electricfan_Square03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/efan/Electricfan_Square04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/efan/Electricfan_Square05.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-bike">
+                    <div class="project-details">
+                        <h2 class="active-project-title">Rusty Bike</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/bike/Bicycle_cycles00.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/bike/Bicycle_cycles01.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/bike/Bicycle_cycles02.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/bike/Bicycle_cycles03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/bike/Bicycle_cycles04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/bike/Bicycle_cycles05.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/bike/Bicycle_cycles06.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/bike/Bicycle_cycles07.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/bike/Bicycle_cycles08.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-mountain">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/environment/video_LARGE_SCALE_LANDSCAPE0001-0374.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Mountain Landscape</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/environment/LARGE_SCALE_LANDSCAPE_COMPRESSED.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-eerie">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/horror_shorts/THE_HALLWAY0001-1190.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">The Hallway</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/horror_shorts/HALLWAY_01.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/horror_shorts/HALLWAY_02.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/horror_shorts/HALLWAY_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/horror_shorts/HALLWAY_04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/horror_shorts/HALLWAY_05.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/horror_shorts/HALLWAY_06.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/horror_shorts/HALLWAY_07.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/horror_shorts/HALLWAY_08.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/horror_shorts/HALLWAY_09.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/horror_shorts/HALLWAY_10.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/horror_shorts/HALLWAY_11.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/horror_shorts/HALLWAY_12.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/horror_shorts/HALLWAY_13.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/horror_shorts/HALLWAY_14.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-found">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/horror_shorts/FOUND_FOOTAGE0001-1036.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Found Footage</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/horror_shorts/ANALOG_IMAGE_01.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/horror_shorts/ANALOG_IMAGE_02.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/horror_shorts/ANALOG_IMAGE_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/horror_shorts/ANALOG_IMAGE_04.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-snowy">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/environment/ATLANTIC0001-0625.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Arctic Cel-shaded</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/environment/SNOWY_COMPRESSED.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/environment/SNOWY_COMPRESSED2.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-school">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/environment/ANIMESTYLE_BACKGROUND0001-0888.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Anime Artstyle School Ground</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/environment/ANIME_BACKGROUND.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-car">
+                    <div class="variant-panel active" id="panel-night">
+                        <div class="video-container">
+                            <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/lowpoly/LP_CAR_CRUISING_NIGHT0000-0312.webm"></video>
+                            <div class="variant-controls icon-overlay">
+                                <button class="variant-btn active" data-target="night" title="Night View">🌙</button>
+                                <button class="variant-btn" data-target="day" title="Day View">☀️</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="variant-panel" id="panel-day">
-                    <div class="video-container">
-                        <video class="video-3d" src="static/lowpoly/LP_CAR_CRUISING0001-0312.webm" preload="auto" autoplay loop muted playsinline></video>
-                        <div class="variant-controls icon-overlay">
-                            <button class="variant-btn" data-target="night" title="Night View">🌙</button>
-                            <button class="variant-btn active" data-target="day" title="Day View">☀️</button>
+                    <div class="variant-panel" id="panel-day">
+                        <div class="video-container">
+                            <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/lowpoly/LP_CAR_CRUISING0001-0312.webm"></video>
+                            <div class="variant-controls icon-overlay">
+                                <button class="variant-btn" data-target="night" title="Night View">🌙</button>
+                                <button class="variant-btn active" data-target="day" title="Day View">☀️</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Car Cruising</h2>
-                </div>
-            </section>
-
-            <section id="project-lowPolyHut" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/lowpoly/lowPolyHut.webm"preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Fish Hut</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/lowpoly/FISHHUT_.jpg"></div>
-                </div>
-            </section>
-
-            <section id="project-truck" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/lowpoly/LP_DESERT_TRUCk0001-0124.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Desert Truck</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/lowpoly/TRUCKCYCLES.png"></div>
-                </div>
-            </section>
-
-            <section id="others-slum" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/others/HOUSES0000-0414.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Slums</h2>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/others/SLUMS_01.jpg"></div>
-                    <div class="gallery-card"><img src="static/others/SLUMS_02.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/others/SLUMS_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/others/SLUMS_04.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/others/SLUMS_05.jpg"></div>
-                </div>
-            </section>
-
-            <section id="others-bloodstream" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/others/BLOODSTREAM_ANIMATION0000-0349.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Bloodstream</h2>
-                </div>
-            </section>
-
-            <section id="others-bike" class="content-body">
-                <div class="project-gallery">
-                    <div class="gallery-card"><img src="static/others/BICYCLE_01.jpg"></div>
-                    <div class="gallery-card"><img src="static/others/BICYCLE_02.jpg"></div>
-                    <div class="gallery-card counter-card"><img src="static/others/BICYCLE_03.jpg"></div>
-                    <div class="gallery-card hidden-asset"><img src="static/others/BICYCLE_04.jpg"></div>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">2D Bike</h2>
-                </div>
-            </section>
-
-            <section id="others-water" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/others/WATER_ANIMATION_ANIME_STYLE0000-0311.webm" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Water Animation</h2>
-                </div>
-            </section>
-
-            <section id="others-burger" class="content-body">
-                <div class="video-container">
-                    <video class="video-3d" src="static/others/burger.mp4" preload="auto" autoplay loop muted playsinline></video>
-                </div>
-                <div class="project-details">
-                    <h2 class="active-project-title">Burger</h2>
-                </div>
-            </section>
-
-        </main>
-    </div>
-
-    <footer id="cinematic-footer">
-        <video id="footer-loop-video" src="static/landingV.webm" autoplay loop muted playsinline></video>
-        <div class="footer-overlay">
-            <h2>Interested in working with me?</h2>
-            
-            <a href="mailto:cl3d.works@gmail.com" class="footer-mailto-btn">Get In Touch Via Email</a>
-            
-            <div class="footer-platforms">
-                <a href="https://www.fiverr.com/s/XL4p7yk" target="_blank">Fiverr</a>
-                <a href="https://www.upwork.com/freelancers/~015dc5f2895e6728f0" target="_blank">Upwork</a>
-                <a href="https://www.linkedin.com/in/christopherlim3dworks" target="_blank">LinkedIn</a>
-                <a href="https://www.behance.net/topherlim" target="_blank">Behance</a>
-                <a href="https://vimeo.com/christopherlim" target="_blank">Vimeo</a>
-            </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Car Cruising</h2>
+                    </div>
+                </section>
+                <section class="content-body" id="project-lowPolyHut">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/lowpoly/lowPolyHut.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Fish Hut</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/lowpoly/FISHHUT_.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="project-truck">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/lowpoly/LP_DESERT_TRUCk0001-0124.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Desert Truck</h2>
+                    </div>
+                        <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/lowpoly/TRUCKCYCLES.png"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="others-slum">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/others/HOUSES0000-0414.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Slums</h2>
+                    </div>
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/others/SLUMS_01.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/others/SLUMS_02.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/others/SLUMS_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/others/SLUMS_04.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/others/SLUMS_05.jpg"></div>
+                    </div>
+                </section>
+                <section class="content-body" id="others-bloodstream">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/others/BLOODSTREAM_ANIMATION0000-0349.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Bloodstream</h2>
+                    </div>
+                </section>
+                <section class="content-body" id="others-bike">
+                    <div class="project-gallery">
+                        <div class="gallery-card"><img loading="lazy" src="static/others/BICYCLE_01.jpg"></div>
+                        <div class="gallery-card"><img loading="lazy" src="static/others/BICYCLE_02.jpg"></div>
+                        <div class="gallery-card counter-card"><img loading="lazy" src="static/others/BICYCLE_03.jpg"></div>
+                        <div class="gallery-card hidden-asset"><img loading="lazy" src="static/others/BICYCLE_04.jpg"></div>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">2D Bike</h2>
+                    </div>
+                </section>
+                <section class="content-body" id="others-water">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/others/WATER_ANIMATION_ANIME_STYLE0000-0311.webm"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Water Animation</h2>
+                    </div>
+                </section>
+                <section class="content-body" id="others-burger">
+                    <div class="video-container">
+                        <video autoplay class="video-3d" loop muted playsinline preload="auto" src="static/others/burger.mp4"></video>
+                    </div>
+                    <div class="project-details">
+                        <h2 class="active-project-title">Burger</h2>
+                    </div>
+                </section>
+            </main>
         </div>
-    </footer>
-
-    <div id="gallery-lightbox" class="lightbox-modal">
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" alt="Enlarged gallery preview">
-    </div>
-
-</body>
-
+        <footer id="cinematic-footer">
+            <video autoplay id="footer-loop-video" loop muted playsinline src="static/landingV.webm"></video>
+            <div class="footer-overlay">
+                <h2>Interested in working with me?</h2>
+                <a class="footer-mailto-btn" href="mailto:cl3d.works@gmail.com">Get In Touch Via Email</a>
+                <div class="footer-platforms">
+                    <a href="https://www.fiverr.com/s/XL4p7yk" target="_blank">Fiverr</a>
+                    <a href="https://www.upwork.com/freelancers/~015dc5f2895e6728f0" target="_blank">Upwork</a>
+                    <a href="https://www.linkedin.com/in/christopherlim3dworks" target="_blank">LinkedIn</a>
+                    <a href="https://www.behance.net/topherlim" target="_blank">Behance</a>
+                    <a href="https://vimeo.com/christopherlim" target="_blank">Vimeo</a>
+                </div>
+            </div>
+        </footer>
+        <div class="lightbox-modal" id="gallery-lightbox">
+            <span class="lightbox-close">&times;</span>
+            <img alt="Enlarged gallery preview" class="lightbox-content" id="lightbox-img">
+            <div class="lightbox-nav-hint"></div>
+        </div>
+    </body>
 </html>
