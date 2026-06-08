@@ -147,65 +147,55 @@ document.addEventListener("DOMContentLoaded", () => {
         const video = container.querySelector('.video-3d');
         if (!video) return;
 
-        const isMobile = () => window.innerWidth <= 768;
+
+        const isMobileOrTablet = window.matchMedia("(pointer: coarse)").matches || (('ontouchstart' in window) && window.innerWidth < 1024);
+
+        const isMobile = () => isMobileOrTablet;
 
         function configureVideoBehavior() {
             if (isMobile()) {
-                // Mobile Configuration: Stop background looping data drain
                 video.loop = false;
                 video.autoplay = false;
                 video.removeAttribute('autoplay');
                 video.removeAttribute('loop');
                 
-                // Allow audio on mobile since it is click-to-play
                 video.muted = false;
                 video.removeAttribute('muted');
                 
-                // Show standard native browser controls
                 video.setAttribute('controls', '');
                 video.controls = true;
                 
-                // Restrict heavy downloading buffers on mobile grids
                 video.setAttribute('preload', 'metadata');
                 video.preload = "metadata";
             } else {
-                // Desktop Configuration stays strictly muted for silent autoplay looping
                 video.loop = true;
                 video.muted = true;
                 video.setAttribute('muted', ''); 
                 video.removeAttribute('controls');
                 video.controls = false;
-                video.setAttribute('preload', 'auto');
+                video.setAttribute('preload', 'metadata');
                 video.preload = "auto";
                 video.play().catch(() => {});
             }
         }
 
-        // Initialize setup logic safely
         configureVideoBehavior();
 
-        // SINGLE PLAY CONFLICT RESOLUTION (Mobile Only)
-        // Listen for the exact millisecond this specific video starts playing
         video.addEventListener('play', () => {
             if (!isMobile()) return;
 
-            // Find all other portfolio videos on the page
             document.querySelectorAll('.video-3d').forEach((otherVideo) => {
-                // If it's a different video and it's currently playing, pause it!
                 if (otherVideo !== video && !otherVideo.paused) {
                     otherVideo.pause();
                 }
             });
         });
 
-        // Let native controls handle clicks on mobile touch frames safely
         container.addEventListener('click', (e) => {
             if (!isMobile()) return;
-            // Stop any parent elements or outer layout listeners from stealing the touch
             e.stopPropagation();
         });
 
-        // Safe tracking to ensure device orientation flips adapt properly
         let lastWidth = window.innerWidth;
         window.addEventListener('resize', () => {
             if (window.innerWidth !== lastWidth) {
@@ -226,14 +216,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // ==========================================
     // IMAGE EXPAND GALLERIES (DESKTOP KEYBOARD & MOBILE SWIPE/TAP)
-    // ==========================================
     const lightbox = document.getElementById('gallery-lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.querySelector('.lightbox-close');
 
-    // Tracking anchors
     let currentActiveCard = null;
     let touchStartX = 0;
     let touchEndX = 0;
@@ -261,7 +248,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Unified lazy-loading navigation handler
     function changeLightboxImage(cardElement) {
         if (!cardElement || !lightboxImg) return;
         
@@ -269,10 +255,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (internalImg) {
             currentActiveCard = cardElement;
             
-            // Wipe out memory trail to prevent frame flashes
             lightboxImg.removeAttribute('src'); 
             
-            // Progressive string load on-demand
             lightboxImg.src = internalImg.src;
         }
     }
@@ -287,7 +271,6 @@ document.addEventListener("DOMContentLoaded", () => {
             targetCard = currentActiveCard.nextElementSibling;
         }
 
-        // Validate that the target sibling is indeed a gallery image card
         if (targetCard && targetCard.classList.contains('gallery-card')) {
             changeLightboxImage(targetCard);
         }
